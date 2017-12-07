@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'git rev-parse --abbrev-ref HEAD'
+                sh 'git branch | grep \* | cut -d ' ' -f2-'
             }
         }
     }
